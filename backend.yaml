@@ -32,3 +32,9 @@
       src: /tmp/backend.zip 
       dest: /app 
       remote_src: yes
+
+  - name: install dependecies 
+    community.general.npm:
+      path: /app 
+
+  
