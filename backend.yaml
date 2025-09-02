@@ -47,6 +47,15 @@
       src: backend.service 
       dest: /etc/systemd/system/backend.service 
 
+  - name: install rewuries python libs 
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      state: present 
+      executable: pip3.9 
+    loop:
+      - PyMySQL
+      - cryptography
+      
   - name: import mysql data 
     community.mysql.mysql_db:
       state: import 
