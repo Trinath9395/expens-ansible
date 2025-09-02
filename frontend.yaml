@@ -23,7 +23,8 @@
       state: directory 
 
   - name: download the html code 
-    ansible.builtin.get_url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+    ansible.builtin.get_url: 
+      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /tmp/frontend.zip 
   
   - name: unzip frontend code 
